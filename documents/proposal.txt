@@ -1,0 +1,9 @@
+Technologies we are going to use:[jieyuan][kevin][tony][calla]
+
+Topic we chose(dataset):[jieyuan]
+
+Analysis we are going to do:[kevin][tony][calla]
+
+Product:[kevin]
+
+Possible advanced feature:[kevin][tony][calla]
