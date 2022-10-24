@@ -9,6 +9,11 @@ Analysis we are going to do:[kevin][tony][calla]
 - analyze based on room types and room number [Kevin]
 - analyze based on whether has licenses [Kevin]
 - analyze based on area or neighbourhood [Kevin]
+- Analyze how prices change over month [tony]
+- Analyze how prices change over weekdays&weekend [tony]
+- Analyze how prices change over longitude&latitude [tony]
+- Analyze how the average price of different areas [tony]
+- Analyze how the average price of different room types [tony]
 
 Product:[kevin]
 Travellers can easily find out a convenient place to stay in Airbnb. Also, it gives a best platform for many to gain profit by submitting the properties onsite. However, there are thousands of available with differernt prices. We aim to find out the factors that affect the price. This allow the landlord to maximum their profit with listing the most important features. Moreover, customers will get a more affordable place with features they prefer.
