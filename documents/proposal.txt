@@ -6,7 +6,9 @@ Topic we chose(dataset):[jieyuan]
 We are going to analysis the Airbnb data[http://insideairbnb.com/get-the-data/]. We find that it is not very easy to find a temperary house in Canada, there are too many choices, for example, house with different price and location. Although there are some apps like Airbnb has already filtered and sorted different types of houses, finding a house is still time-consuming. Thus we are trying to use some skills of data analysis to make everything easier. We plan to use some different analysis to find out the best house in a specific area with the Airbnb dataset.
 
 Analysis we are going to do:[kevin][tony][calla]
+- analytics of review scores and comments
 
 Product:[kevin]
 
 Possible advanced feature:[kevin][tony][calla]
+- filter and recommend listings based on reviews
