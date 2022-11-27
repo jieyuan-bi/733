@@ -15,8 +15,8 @@ def main(inputs, output):
 
     l = spark.read.parquet(listings_dir)
     r = spark.read.parquet(reviews_dir)
-    l.show()
-    r.show()
+    print(l.count()) #   51625
+    print(r.count()) #  1747857
 
     ## TODO schema for check columns ## parquet read file not need for schema
     # views_schema = types.StructType([
