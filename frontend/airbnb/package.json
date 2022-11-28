@@ -11,7 +11,9 @@
     "axios": "^1.2.0",
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "element-plus": "^2.2.25",
+    "vue": "^3.2.13",
+    "vue-google-charts": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
