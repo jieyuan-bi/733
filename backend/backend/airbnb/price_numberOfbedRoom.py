@@ -16,7 +16,7 @@ def main(input, output):
     ## 1 2 3 4 5 over_6
     listings = spark.read.parquet(listings_dir)
     bedRoom_num = listings.select('bedrooms', 'price').\
-        withColumn('bedrooms_nums', F.when(F.col('bedrooms') > 5, 'over_5').
+        withColumn('bedrooms_nums', F.when(F.col('bedrooms') > 5, '-1'). ## for frontend => change to over_5
                    otherwise(F.col('bedrooms').cast('string'))).select('bedrooms_nums', 'price')
     bedRoom_num.createOrReplaceTempView("bedRoom_num")
     bedRoom_num = spark.sql("SELECT bedrooms_nums, MIN(price) AS min, percentile_approx(price, 0.25) AS Q1,\
