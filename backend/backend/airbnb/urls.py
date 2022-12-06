@@ -14,4 +14,11 @@ urlpatterns = [
     path('priceWithWeek/', views.priceWithWeek_list),
 
     #calla
+    path('avg_review_by_city/', views.avg_review_by_city_list),
+    path('avg_review_by_room_type/', views.avg_review_by_room_type_list),
+    path('avg_review_by_price_bucket/', views.avg_review_by_price_bucket_list),
+    path('avg_review_by_superhosts/', views.avg_review_by_superhosts_list),
+
+    path('factors_predict_review/', views.factors_predict_review_list),
+    path('sub_category_predict_review/', views.sub_category_predict_review_list),
 ]

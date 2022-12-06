@@ -45,6 +45,54 @@ class priceWithWeek(models.Model):
     average_price = models.FloatField()
 
 
-
-
 # models for Cella
+class Avg_Review_by_City(models.Model):
+    city = models.CharField(max_length=100)
+    avg_overall = models.FloatField()
+    avg_accuracy = models.FloatField()
+    avg_cleanliness = models.FloatField()
+    avg_checkin = models.FloatField()
+    avg_communication = models.FloatField()
+    avg_location = models.FloatField()
+    avg_value = models.FloatField()
+
+class Avg_Review_by_RoomType(models.Model):
+    room_type = models.CharField(max_length=100)
+    avg_overall = models.FloatField()
+    avg_accuracy = models.FloatField()
+    avg_cleanliness = models.FloatField()
+    avg_checkin = models.FloatField()
+    avg_communication = models.FloatField()
+    avg_location = models.FloatField()
+    avg_value = models.FloatField()
+
+class Avg_Review_by_PriceBucket(models.Model):
+    price_bucket = models.CharField(max_length=100)
+    avg_overall = models.FloatField()
+    avg_accuracy = models.FloatField()
+    avg_cleanliness = models.FloatField()
+    avg_checkin = models.FloatField()
+    avg_communication = models.FloatField()
+    avg_location = models.FloatField()
+    avg_value = models.FloatField()
+
+class Avg_Review_by_Superhosts(models.Model):
+    host_is_superhost = models.CharField(max_length=100)
+    avg_overall = models.FloatField()
+    avg_accuracy = models.FloatField()
+    avg_cleanliness = models.FloatField()
+    avg_checkin = models.FloatField()
+    avg_communication = models.FloatField()
+    avg_location = models.FloatField()
+    avg_value = models.FloatField()
+
+class Factors_Predict_Review(models.Model):
+    feature = models.CharField(max_length=100)
+    feature_importance_mean = models.FloatField()
+    feature_importance_std = models.FloatField()
+
+class SubCategory_Predict_Review(models.Model):
+    feature = models.CharField(max_length=100)
+    feature_importance_mean = models.FloatField()
+    feature_importance_std = models.FloatField()
+

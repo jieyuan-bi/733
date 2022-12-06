@@ -78,7 +78,7 @@ def price_numberOfBedRoom_list(request):
 @api_view(['GET'])
 def priceWithMonth_list(request):
     """
-    Data processed by Kevin
+    Data processed by Tony
     Return a json format of priceWithMonth
     """
     if request.method == 'GET':
@@ -95,7 +95,7 @@ def priceWithMonth_list(request):
 @api_view(['GET'])
 def priceWithSpace_list(request):
     """
-    Data processed by Kevin
+    Data processed by Tony
     Return a json format of price_with_space
     """
     if request.method == 'GET':
@@ -112,7 +112,7 @@ def priceWithSpace_list(request):
 @api_view(['GET'])
 def priceWithType_list(request):
     """
-    Data processed by Kevin
+    Data processed by Tony
     Return a json format of price_numberOfBedRoom
     """
     if request.method == 'GET':
@@ -129,7 +129,7 @@ def priceWithType_list(request):
 @api_view(['GET'])
 def priceWithWeek_list(request):
     """
-    Data processed by Kevin
+    Data processed by Tony
     Return a json format of priceWithWeek
     """
     if request.method == 'GET':
@@ -146,5 +146,114 @@ def priceWithWeek_list(request):
 
 
 # api views of calla data
+
+@api_view(['GET'])
+def avg_review_by_city_list(request):
+    """
+    Data processed by Calla
+    avg review scores by city
+    Return a json format of avg_review_by_city
+    """
+    if request.method == 'GET':
+        avg_review_by_city = Avg_Review_by_City.objects.all()
+        if avg_review_by_city.exists():
+            serializer = Avg_Review_by_CitySerializer(avg_review_by_city, many=True)
+        # init the data from reading the csv file
+        else:
+            read_avg_review_by_city()
+            serializer = Avg_Review_by_CitySerializer(avg_review_by_city, many=True)
+        # print(serializer.data)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def avg_review_by_room_type_list(request):
+    """
+    Data processed by Calla
+    avg review scores by room type
+    Return a json format of avg_review_by_room_type
+    """
+    if request.method == 'GET':
+        avg_review_by_room_type = Avg_Review_by_RoomType.objects.all()
+        if avg_review_by_room_type.exists():
+            serializer = Avg_Review_by_RoomTypeSerializer(avg_review_by_room_type, many=True)
+        # init the data from reading the csv file
+        else:
+            read_avg_review_by_room_type()
+            serializer = Avg_Review_by_RoomTypeSerializer(avg_review_by_room_type, many=True)
+        # print(serializer.data)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def avg_review_by_price_bucket_list(request):
+    """
+    Data processed by Calla
+    avg review scores by city
+    Return a json format of avg_review_by_price_bucket
+    """
+    if request.method == 'GET':
+        avg_review_by_price_bucket = Avg_Review_by_PriceBucket.objects.all()
+        if avg_review_by_price_bucket.exists():
+            serializer = Avg_Review_by_PriceBucketSerializer(avg_review_by_price_bucket, many=True)
+        # init the data from reading the csv file
+        else:
+            read_avg_review_by_price_bucket()
+            serializer = Avg_Review_by_PriceBucketSerializer(avg_review_by_price_bucket, many=True)
+        # print(serializer.data)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def avg_review_by_superhosts_list(request):
+    """
+    Data processed by Calla
+    avg review scores by city
+    Return a json format of avg_review_by_superhosts
+    """
+    if request.method == 'GET':
+        avg_review_by_superhosts = Avg_Review_by_Superhosts.objects.all()
+        if avg_review_by_superhosts.exists():
+            serializer = Avg_Review_by_SuperhostsSerializer(avg_review_by_superhosts, many=True)
+        # init the data from reading the csv file
+        else:
+            read_avg_review_by_superhosts()
+            serializer = Avg_Review_by_SuperhostsSerializer(avg_review_by_superhosts, many=True)
+        # print(serializer.data)
+        return Response(serializer.data)
+
+
+@api_view(['GET'])
+def factors_predict_review_list(request):
+    """
+    Data processed by Calla
+    Other factors that mostly stongly predict overall review score
+    Return a json format of factors_predict_review
+    """
+    if request.method == 'GET':
+        factors_predict_review = Factors_Predict_Review.objects.all()
+        if factors_predict_review.exists():
+            serializer = Factors_Predict_ReviewSerializer(factors_predict_review, many=True)
+        # init the data from reading the csv file
+        else:
+            read_factors_predict_review()
+            serializer = Factors_Predict_ReviewSerializer(factors_predict_review, many=True)
+        # print(serializer.data)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def sub_category_predict_review_list(request):
+    """
+    Data processed by Calla
+    sub-category review scores that mostly strongly predict overall review score
+    Return a json format of sub_category_predict_review
+    """
+    if request.method == 'GET':
+        sub_category_predict_review = SubCategory_Predict_Review.objects.all()
+        if sub_category_predict_review.exists():
+            serializer = SubCategory_Predict_ReviewSerializer(sub_category_predict_review, many=True)
+        # init the data from reading the csv file
+        else:
+            read_sub_category_predict_review()
+            serializer = SubCategory_Predict_ReviewSerializer(sub_category_predict_review, many=True)
+        # print(serializer.data)
+        return Response(serializer.data)
 
 

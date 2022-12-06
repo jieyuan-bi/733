@@ -107,9 +107,35 @@ class PriceWithWeekSerializer(serializers.ModelSerializer):
 
 
 
-
-
-
-
-
 # serializers for calla data
+
+class Avg_Review_by_CitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Avg_Review_by_City
+        fields = ['city','avg_overall','avg_accuracy','avg_cleanliness','avg_checkin','avg_communication','avg_location','avg_value']
+
+class Avg_Review_by_RoomTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Avg_Review_by_RoomType
+        fields = ['room_type','avg_overall','avg_accuracy','avg_cleanliness','avg_checkin','avg_communication','avg_location','avg_value']
+
+class Avg_Review_by_PriceBucketSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Avg_Review_by_PriceBucket
+        fields = ['price_bucket','avg_overall','avg_accuracy','avg_cleanliness','avg_checkin','avg_communication','avg_location','avg_value']
+
+class Avg_Review_by_SuperhostsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Avg_Review_by_Superhosts
+        fields = ['host_is_superhost','avg_overall','avg_accuracy','avg_cleanliness','avg_checkin','avg_communication','avg_location','avg_value']
+
+
+class Factors_Predict_ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Factors_Predict_Review
+        fields = ['feature','feature_importance_mean','feature_importance_std']
+
+class SubCategory_Predict_ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubCategory_Predict_Review
+        fields = ['feature','feature_importance_mean','feature_importance_std']
