@@ -103,6 +103,10 @@ def main(inputs, output):
     reviews_file = 'reviews.csv.gz'
     data_listings = []
     data_views = []
+
+    listings_dir = output + '/' + 'listings'
+    reviews_dir = output + '/' + 'reviews'
+
     for country in next(os.walk(inputs))[1]:
         for city in next(os.walk(inputs + '/' + country))[1]:
             # listings process
@@ -138,8 +142,6 @@ def main(inputs, output):
                                            otherwise(0)).\
                                 drop('tmp', 'bathrooms_text')
 
-            data_listings.append(listings)
-
             # reviews process
             reviews_path = inputs + '/' + country + '/' + city + '/' + reviews_file
             reviews = spark.read.csv(reviews_path, schema=views_schema, header=True, multiLine=True, quote='"',
@@ -152,24 +154,17 @@ def main(inputs, output):
             # 2 replace n/a comments to ''
             reviews = reviews.withColumn('comments', F.when(reviews['comments'] == 'n/a', '').
                                          otherwise(reviews['comments']))
-            data_views.append(reviews)
+            # write
+            listings.write.parquet(listings_dir, mode="append", compression="snappy")
+            reviews.write.parquet(reviews_dir, mode="append", compression="snappy")
 
-    listings = data_listings[0]
-    for listings_next in data_listings[1:]:
-        listings = listings.union(listings_next)
+    # # output path template: data / listings  reviews
+    # listings_dir = output + '/' + 'listings'
+    # reviews_dir = output + '/' + 'reviews'
+    # listings.write.parquet(listings_dir, mode="overwrite", compression="snappy")
+    # reviews.write.parquet(reviews_dir, mode="overwrite", compression="snappy")
 
-    reviews = data_views[0]
-    for reviews_next in data_views[1:]:
-        reviews = reviews.union(reviews_next)
 
-    listings = listings.repartition(8)
-    reviews = reviews.repartition(8)
-
-    # output path template: data / listings  reviews
-    listings_dir = output + '/' + 'listings'
-    reviews_dir = output + '/' + 'reviews'
-    listings.write.parquet(listings_dir, mode="overwrite", compression="snappy")
-    reviews.write.parquet(reviews_dir, mode="overwrite", compression="snappy")
 
     # views_schema = types.StructType([
     #     types.StructField('listing_id', types.StringType()),

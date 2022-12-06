@@ -32,11 +32,13 @@ def main(input, output):
     correlation_df = spark.createDataFrame(rows, x.columns)
     diretory = '/corela_rooms_beds_accommodates'
     output_path = output + diretory
+
     correlation_df.coalesce(1).write.csv(output_path, mode='overwrite', header='true')
 
 
     ## TODO How to read
     # spark.read.csv(output_path, header=True).show()
+
 
 
     # listings_schema = types.StructType([
