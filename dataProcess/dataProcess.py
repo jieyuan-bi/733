@@ -113,6 +113,7 @@ def main(inputs, output):
             listings_path = inputs + '/' + country + '/' + city + '/' + listings_file
             listings = spark.read.csv(listings_path, schema=listings_schema, header=True, multiLine=True, quote='"',
                                     escape='"')
+
             # 1 add country city column
             listings = listings.withColumn('country', F.lit(country))
             listings = listings.withColumn('city', F.lit(city))
