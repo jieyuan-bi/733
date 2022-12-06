@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import *
 
-
+# serializers for kevin data
 class Avg_Price_LicenseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Avg_Price_License
@@ -81,3 +81,35 @@ class Price_NumberOfBedRoomSerializer(serializers.ModelSerializer):
     #     instance.save()
     #     return instance
 
+
+
+
+# serializers for kevin data
+class PriceWithMonthSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = priceWithMonth
+        fields = ['month', 'average_price']
+
+class PriceWithSpaceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = priceWithSpace
+        fields = ['neighbourhood', 'average_price']
+
+class PriceWithTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = priceWithType
+        fields = ['room_type', 'average_price']
+
+class PriceWithWeekSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = priceWithWeek
+        fields = ['week', 'average_price']
+
+
+
+
+
+
+
+
+# serializers for calla data
