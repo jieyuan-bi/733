@@ -71,7 +71,7 @@ def read_priceWithMonth():
         reader = csv.DictReader(csvfile)
 
         for row in reader:
-            data = {'month': row['Month'], 'average_price': float(row['average_price($)'])}
+            data = {'month': row['Month'], 'average_price': float(row['average_price($)']), 'median_price': float(row['median_price($)'])}
             serializer = PriceWithMonthSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
@@ -88,7 +88,8 @@ def read_priceWithSpace():
         reader = csv.DictReader(csvfile)
 
         for row in reader:
-            data = {'neighbourhood': row['neighbourhood'], 'average_price': float(row['average_price($)'])}
+            data = {'neighbourhood': row['neighbourhood'], 'average_price': float(row['avg_price($)']), 
+            'avg_latitute': float(row['avg_latitute']), 'avg_longitude': float(row['avg_longitude'])}
             serializer = PriceWithSpaceSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
@@ -105,7 +106,9 @@ def read_priceWithType():
         reader = csv.DictReader(csvfile)
 
         for row in reader:
-            data = {'room_type': row['room_type'], 'average_price': float(row['average_price($)'])}
+            data = {'room_type': row['room_type'], 'average_price': float(row['average_price($)']), 
+            'median_price': float(row['median_price($)']), 'max_price': float(row['max_price($)']),
+            'min_price': float(row['min_price($)'])}
             serializer = PriceWithTypeSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
@@ -122,7 +125,8 @@ def read_priceWithWeek():
         reader = csv.DictReader(csvfile)
 
         for row in reader:
-            data = {'week': row['week'], 'average_price': float(row['priceWithWeek($)'])}
+            data = {'week': row['week'], 'average_price': float(row['average_price($)']),
+            'median_price': float(row['median_price($)'])}
             serializer = PriceWithWeekSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()

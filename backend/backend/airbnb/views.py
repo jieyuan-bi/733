@@ -79,6 +79,7 @@ def price_numberOfBedRoom_list(request):
 def priceWithMonth_list(request):
     """
     Data processed by Tony
+    Changes in the mean and median house prices in the Vancouver area by month
     Return a json format of priceWithMonth
     """
     if request.method == 'GET':
@@ -96,6 +97,7 @@ def priceWithMonth_list(request):
 def priceWithSpace_list(request):
     """
     Data processed by Tony
+    The average house price for each neighborhood in Vancouver and its average latitude and longitude
     Return a json format of price_with_space
     """
     if request.method == 'GET':
@@ -113,6 +115,7 @@ def priceWithSpace_list(request):
 def priceWithType_list(request):
     """
     Data processed by Tony
+    Average, median, highest, and lowest prices for four types of homes in the Vancouver area
     Return a json format of price_numberOfBedRoom
     """
     if request.method == 'GET':
@@ -130,6 +133,7 @@ def priceWithType_list(request):
 def priceWithWeek_list(request):
     """
     Data processed by Tony
+    Changes in the mean and median house prices in the Vancouver area by week
     Return a json format of priceWithWeek
     """
     if request.method == 'GET':

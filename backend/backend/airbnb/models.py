@@ -31,18 +31,25 @@ class Price_NumberOfBedRoom(models.Model):
 class priceWithMonth(models.Model):
     month = models.CharField(max_length=100)
     average_price = models.FloatField()
+    median_price = models.FloatField()
 
 class priceWithSpace(models.Model):
     neighbourhood = models.CharField(max_length=100)
     average_price = models.FloatField()
+    avg_latitute = models.FloatField()
+    avg_longitude = models.FloatField()
 
 class priceWithType(models.Model):
     room_type = models.CharField(max_length=100)
     average_price = models.FloatField()
+    median_price = models.FloatField()
+    max_price = models.FloatField()
+    min_price = models.FloatField()
 
 class priceWithWeek(models.Model):
     week = models.CharField(max_length=100)
     average_price = models.FloatField()
+    median_price = models.FloatField()
 
 
 # models for Cella

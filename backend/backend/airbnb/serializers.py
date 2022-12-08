@@ -88,22 +88,22 @@ class Price_NumberOfBedRoomSerializer(serializers.ModelSerializer):
 class PriceWithMonthSerializer(serializers.ModelSerializer):
     class Meta:
         model = priceWithMonth
-        fields = ['month', 'average_price']
+        fields = ['month', 'average_price','median_price']
 
 class PriceWithSpaceSerializer(serializers.ModelSerializer):
     class Meta:
         model = priceWithSpace
-        fields = ['neighbourhood', 'average_price']
+        fields = ['neighbourhood', 'average_price','avg_latitute','avg_longitude']
 
 class PriceWithTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = priceWithType
-        fields = ['room_type', 'average_price']
+        fields = ['room_type', 'average_price', 'median_price', 'max_price', 'min_price']
 
 class PriceWithWeekSerializer(serializers.ModelSerializer):
     class Meta:
         model = priceWithWeek
-        fields = ['week', 'average_price']
+        fields = ['week', 'average_price','median_price']
 
 
 
