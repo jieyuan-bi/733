@@ -1,6 +1,6 @@
 <template>
     <GChart
-      type="BarChart"
+      type="ColumnChart"
       :data="chartData"
       :options="chartOptions"
     />
@@ -12,7 +12,7 @@
   import { GChart } from 'vue-google-charts'
   
   export default {
-    name: "corela_rooms_beds_accommodates",
+    name: "priceWithWeek",
     data() {
       return {
         chartData:[],
@@ -20,11 +20,13 @@
           
             // title: 'Correlation between bedrooms_num, beds_num and accommodates',
             hAxis: {
-              title: 'Correlation',
-              minValue: 0,
+              title: 'Week',
+            },
+            vAxis: {
+              title: 'Price',
             },
             height: 400,
-            colors: ['#43D7FF']
+            colors: ['#F254FC', '#F7DB6A']
           
         }
       };
@@ -35,20 +37,19 @@
     methods: {
         init_data(){
           axios
-          .get("/api/corela_rooms_beds_accommodates")
+          .get("/api/priceWithWeek")
           .then((response) => {
             var response_data = response.data;
-            var graph_data = [['','correlation'],
-              ['bedrooms and beds',response_data[0].beds],
-              ['bedrooms and accommodates',response_data[0].accommodates],
-              ['beds and accommodates',response_data[1].accommodates],
-            ]
+            var graph_data = [['week','average_price','median_price']]
+            for (let i = 0; i < response_data.length; i++) {
+                graph_data.push([response.data[i].week, response.data[i].average_price, response.data[i].median_price])
+            }
             this.chartData = graph_data
           })
           .catch((error) => {
             console.log(error);
           });
-          console.log('complete_init')
+          // console.log('complete_init')
         }
     },
     mounted() {
