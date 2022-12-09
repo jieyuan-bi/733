@@ -251,8 +251,8 @@ if __name__ == '__main__':
     
     In our project, we set:
     input= "YourLocalComputer\\Vancouver_all\\van_calendar.csv"
-    output1= "cmput732proj-main\\backend\\backend\\airbnb\\analysis_results\\priceWithMonth"
-    output2= "cmput732proj-main\\backend\\backend\\airbnb\\analysis_results\\priceWithWeek"
+    output1= "../analysis_results/priceWithMonth"
+    output2= "../analysis_results/priceWithWeek"
     
     '''
     input = sys.argv[1]
