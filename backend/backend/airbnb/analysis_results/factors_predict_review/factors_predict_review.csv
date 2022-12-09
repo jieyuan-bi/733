@@ -1,0 +1,6 @@
+feature,feature_importance_mean,feature_importance_std
+host_is_superhost,0.011180425,0.000683376
+host_identity_verified,0.009981801,0.0042086933
+host_time_on_airbnb,0.009454139,0.0009315045
+reviews_per_month,0.009183667,0.00069464784
+host_listings_count,0.009024185,0.0010170703
