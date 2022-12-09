@@ -85,7 +85,7 @@ read the csv file and init the data to database
 def read_priceWithSpace():
     file_name = "airbnb/analysis_results/priceWithSpace/priceWithSpace.csv"
     with open(os.path.join(settings.BASE_DIR, file_name), newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
+        reader = csv.DictReader(csvfile,delimiter='\t')
 
         for row in reader:
             data = {'neighbourhood': row['neighbourhood'], 'average_price': float(row['avg_price($)']), 
