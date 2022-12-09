@@ -250,7 +250,7 @@ if __name__ == '__main__':
     '''
     
     In our project, we set:
-    input= "...\\Vancouver_all\\van_calendar.csv"
+    input= "YourLocalComputer\\Vancouver_all\\van_calendar.csv"
     output1= "cmput732proj-main\\backend\\backend\\airbnb\\analysis_results\\priceWithMonth"
     output2= "cmput732proj-main\\backend\\backend\\airbnb\\analysis_results\\priceWithWeek"
     
