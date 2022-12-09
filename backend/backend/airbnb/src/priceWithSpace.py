@@ -179,7 +179,7 @@ if __name__ == '__main__':
 
     '''
     In our project, we set:
-    input= "...\\listings_detailed\\listings(1,2,3,4,5,6,7).csv"
+    input= "YourLocalComputer\\listings_detailed\\listings(1,2,3,4,5,6,7).csv"
     output= "cmput732proj-main\\backend\\backend\\airbnb\\analysis_results\\priceWithSpace(1,2,3,4,5,6,7)"
     '''
 
