@@ -56,7 +56,7 @@ Download the V2AfterDataProcess from the link above and unzip listings_detailed.
 Download the rawData data from the link above and unzip it to cmput732proj/dataProcess, then run 'dataProcess.py' to obtain the cleaned data(cmput732proj/dataProcess/data)
 
 ### 2 ETL(Extract, Transform, Load)
-We put all out ETL python code in cmput732proj/backend/backend/airbnb/src/ directory. To run our ETL python code, you need to configure the environment correctly by installing the packages mentioned above in '0 Getting Started' and put the data set in right places as mentioned in 1.4  
+We put all our ETL python code in cmput732proj/backend/backend/airbnb/src directory. To run our ETL python code, you need to configure the environment correctly by installing the packages mentioned above in '0 Getting Started' and put the data set in right places as mentioned in 1.4  
 Here is what these codes do and how to run them in a Linux environment(in cmput732proj/backend/backend/airbnb/src):  
 #### 1)priceWithTime.py: Obtain the mean and median house prices in the Vancouver area by week and month
 command: ${SPARK_HOME}/bin/spark-submit priceWithTime.py YourLocalComputer/Vancouver_all/van_calendar.csv ../analysis_results/priceWithMonth ../analysis_results/priceWithWeek
