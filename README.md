@@ -53,7 +53,7 @@ In order to visualize the results conveniently, we put all the output files in c
 
 #### 1.4 Run Data Process
 Download the V2AfterDataProcess from the link above and unzip listings_detailed.zip and Vancouver_all.zip to your local.  
-Download the rawData data from the link above and unzip it to cmput732proj/dataProcess, then run 'dataProcess.py' to obtain the cleaned data as 'data'(cmput732proj/dataProcess)
+Download the rawData data from the link above and unzip it to cmput732proj/dataProcess, then run 'dataProcess.py' to obtain the cleaned data(cmput732proj/dataProcess/data)
 
 ### 2 ETL(Extract, Transform, Load)
 We put all out ETL python code in cmput732proj/backend/backend/airbnb/src/ directory. To run our ETL python code, you need to configure the environment correctly by installing the packages mentioned above in '0 Getting Started' and put the data set in right places as mentioned in 1.4  
