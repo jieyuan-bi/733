@@ -84,6 +84,6 @@ command: ${SPARK_HOME}/bin/spark-submit predict_price.py inputData ../analysis_r
 
 ### 3 Run Server
 TODO
-
+ If you created some kind of web frontend, please include a URL in the README.md as well.
 
     
