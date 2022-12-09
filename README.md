@@ -43,7 +43,7 @@ The reason why we have 2 versions of datasets is we want to compare the performa
 Link: https://drive.google.com/drive/folders/1fS4aLfhWBYxeGBRwATOQqCe1igD7329_?usp=share_link
 #### 1.2. File Path  
 Considering that we wrote our code separately and locally, it would be inconvenient to fix the input/output paths of data, we made these paths very flexible so that you can upload and save the data wherever you want by giving different command line arguments.
-However, in order to visualize the results conveniently, we in the end gathered all the output files in cmput732proj/backend/backend/airbnb/analysis_results/ directory.
+However, in order to visualize the results conveniently, we in the end gathered all the output files in cmput732proj/backend/backend/airbnb/analysis_results directory.
 
 1.2.1 raw data path: rawData / COUNTRY_NAME / CITY_NAME / listings.csv.gz reviews.csc.gz
 
@@ -53,12 +53,12 @@ However, in order to visualize the results conveniently, we in the end gathered 
 1.3.1 format: parquet & csv
 
 #### 1.4 Run Data Process
-Download the V2AfterDataProcess from the link above and unzip listings_detailed.zip and Vancouver_all.zip to your local.
+Download the V2AfterDataProcess from the link above and unzip listings_detailed.zip and Vancouver_all.zip to your local.  
 Download the rawData data from the link above and and set the input & output data path for 'dataProcess.py'.
 
 ### 2 ETL(Extract, Transform, Load)
 We put all out ETL python code in cmput732proj/backend/backend/airbnb/src/ directory. To run our ETL python code, you need to configure the environment correctly by installing the packages mentioned above in '0 Getting Started'.  
-Here is what these codes do and how to run them in a Linux environment(under cmput732proj/backend/backend/airbnb/src/):  
+Here is what these codes do and how to run them in a Linux environment(under cmput732proj/backend/backend/airbnb/src):  
 #### 1)priceWithTime.py: Obtain the mean and median house prices in the Vancouver area by week and month
 command line: ${SPARK_HOME}/bin/spark-submit priceWithTime.py YourLocalComputer/Vancouver_all/van_calendar.csv ../analysis_results/priceWithMonth ../analysis_results/priceWithWeek
 
