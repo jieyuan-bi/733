@@ -62,6 +62,7 @@
   <priceWithType/>
 </el-card>
 
+
 </template>
 
 <script>
@@ -77,7 +78,7 @@ import priceWithType from '../components/chart/priceWithType';
 
 
 export default {
-  name: 'HelloWorld',
+  name: 'theHome',
   props: {
     msg: String
   },
