@@ -119,7 +119,7 @@ if __name__ == '__main__':
 
     '''
         In our project, we set:
-        input= "...\\Vancouver_all\\van_listings_detailed.csv"
+        input= "YourLocalComputer\\Vancouver_all\\van_listings_detailed.csv"
     '''
 
     input = sys.argv[1]
