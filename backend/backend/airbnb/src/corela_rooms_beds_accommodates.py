@@ -14,7 +14,7 @@ assert sys.version_info >= (3, 5) # make sure we have Python 3.5+
 def main(input, output):
 
     listings_dir = input + '/' + 'listings'
-    ## TODO correlation between rooms beds and accommodates
+    ## correlation between rooms beds and accommodates
     listings = spark.read.parquet(listings_dir)
     x = listings.select('bedrooms', 'beds', 'accommodates')
     features = 'corr_features'
@@ -37,10 +37,11 @@ def main(input, output):
 
 if __name__ == '__main__':
     # raw data path
-    input = 'data'
+    # data
+    input = sys.argv[1]
     # processed data path
-    output = 'analysis_results'
-    spark = SparkSession.builder.appName('data process').getOrCreate()
+    output = '../analysis_results'
+    spark = SparkSession.builder.appName('correlation between rooms beds and accommodate').getOrCreate()
     assert spark.version >= '3.0'  # make sure we have Spark 3.0+
     spark.sparkContext.setLogLevel('WARN')
     sc = spark.sparkContext

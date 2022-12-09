@@ -97,7 +97,7 @@ def main(inputs, output):
     ])
 
     # # main logic starts here
-    # # TODO hardcode path for listings & reviews
+    # # hardcode path for listings & reviews
     # # dire path template: COUNTRY / CITY / listings.csv.gz  reviews.csv.gz
     listings_file = 'listings.csv.gz'
     reviews_file = 'reviews.csv.gz'
@@ -158,14 +158,7 @@ def main(inputs, output):
             listings.write.parquet(listings_dir, mode="append", compression="snappy")
             reviews.write.parquet(reviews_dir, mode="append", compression="snappy")
 
-    # # output path template: data / listings  reviews
-    # listings_dir = output + '/' + 'listings'
-    # reviews_dir = output + '/' + 'reviews'
-    # listings.write.parquet(listings_dir, mode="overwrite", compression="snappy")
-    # reviews.write.parquet(reviews_dir, mode="overwrite", compression="snappy")
-
-
-
+    # schema after data process: only for column check
     # views_schema = types.StructType([
     #     types.StructField('listing_id', types.StringType()),
     #     types.StructField('id', types.StringType()),
@@ -209,11 +202,12 @@ def main(inputs, output):
 
 
 if __name__ == '__main__':
-    # TODO hardcode file path rawData & data
     # raw data path
-    inputs = 'rawData'
+    ## rawData
+    inputs = sys.argv[1]
     # processed data path
-    output = 'data'
+    ## data
+    output = sys.argv[2]
     spark = SparkSession.builder.appName('data process').getOrCreate()
     assert spark.version >= '3.0'  # make sure we have Spark 3.0+
     spark.sparkContext.setLogLevel('WARN')
