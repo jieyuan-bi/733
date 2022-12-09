@@ -42,8 +42,7 @@ The reason why we have 2 versions of datasets is we want to compare the performa
 
 Link: https://drive.google.com/drive/folders/1fS4aLfhWBYxeGBRwATOQqCe1igD7329_?usp=share_link
 #### 1.2. File Path  
-Considering that we wrote our code separately and locally, it would be inconvenient to fix the input/output paths of data, we made these paths very flexible so that you can upload and save the data wherever you want by giving different command line arguments.
-However, in order to visualize the results conveniently, we in the end gathered all the output files in cmput732proj/backend/backend/airbnb/analysis_results directory.
+In order to visualize the results conveniently, we put all the output files in cmput732proj/backend/backend/airbnb/analysis_results directory.
 
 1.2.1 raw data path: rawData / COUNTRY_NAME / CITY_NAME / listings.csv.gz reviews.csc.gz
 
