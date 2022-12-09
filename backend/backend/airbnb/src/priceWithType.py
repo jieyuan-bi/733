@@ -147,7 +147,7 @@ if __name__ == '__main__':
     '''
     In our project, we set:
     input= "YourLocalComputer\\Vancouver_all\\van_listings_detailed.csv"
-    output= "cmput732proj-main\\backend\\backend\\airbnb\\analysis_results\\priceWithType"
+    output= "../analysis_results/priceWithType"
     '''
     input = sys.argv[1]
     output = sys.argv[2]
