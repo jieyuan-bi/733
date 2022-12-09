@@ -1,48 +1,55 @@
 # cmput732proj
+### 0 Getting Started
+#### Installation:
+* pyspark
+```
+pip install pyspark
+```
+* keras
+```
+pip install keras
+```
+* sklearn
+```
+pip install sklearn
+```
+* pandas
+```
+pip install pandas
+```
+* wordcloud
+```
+pip install wordcloud
+```
+* matplotlib
+```
+pip install matplotlib
+```
+### 1 Data Cleaning
+#### 1.1. Data Link
+Since the rawData and the data after cleaning are large, so we upload the data in Google Drive. Please download the datasets and put them to the right path.
+The datasets have 3 parts. One is rawData which we combine all the data download from 'Inside Airbnb'.
+One is version 1 data in Parquet format after data processed. The last one is version 2 data in csv format.
+The reason why we have 2 versions of datasets is we want to compare the performance of these file formats.
 
-### 1 DATA CLEANING
-##### 1.1. file path
-1.1.1 raw data path: rawData / COUNTRY_NAME / CITY_NAME / listings.csv.gz reviews.csc.gz
+Link: https://drive.google.com/drive/folders/1fS4aLfhWBYxeGBRwATOQqCe1igD7329_?usp=share_link
+#### 1.2. File Path
+1.2.1 raw data path: rawData / COUNTRY_NAME / CITY_NAME / listings.csv.gz reviews.csc.gz
 
-1.1.2 cleaned data path: data / listings   reviews
-##### 1.2 Format & schema
-1.2.1 format: parquet
+1.2.2 cleaned data
+ path: data / listings   reviews
+#### 1.3 Format
+1.3.1 format: parquet & csv
 
-1.2.2 schema after cleaned:
+#### 1.4 Run Data Process
+We need to download the rawData data from the link above and and set the input & output data path for 'dataProcess.py'.
 
-    views_schema = types.StructType([
-        types.StructField('listing_id', types.StringType()),
-        types.StructField('id', types.StringType()),
-        types.StructField('date', types.DateType()),
-        types.StructField('reviewer_id', types.LongType()),
-        types.StructField('reviewer_name', types.StringType()),
-        types.StructField('comments', types.StringType()),
-        types.StructField('country', types.StringType()),
-        types.StructField('city', types.StringType()),
-    ])
+### 2 Data Analysis
+All data analysis Python files are in airbnb/src directory. And all analysis results are in airbnb/analysis_results.
+All Python files need to set up correct input file path from the output of data processed and output the results to analysis_results.
 
-    listings_schema = types.StructType([
-        types.StructField('id', types.IntegerType(), False),
-        types.StructField('listing_url', types.StringType(), False),
-        types.StructField('neighbourhood_cleansed', types.StringType(), False),
-        types.StructField('latitude', types.DoubleType(), False),
-        types.StructField('longitude', types.DoubleType(), False),
-        types.StructField('room_type', types.StringType(), False),
-        types.StructField('accommodates', types.IntegerType(), False),
-        types.StructField('bedrooms', types.IntegerType(), False),
-        types.StructField('beds', types.IntegerType(), False),
-        types.StructField('price', types.DoubleType(), False),
-        types.StructField('license', types.StringType(), False),
-        types.StructField('number_of_reviews', types.IntegerType(), False),
-        types.StructField('review_scores_rating', types.DoubleType(), False),
-        types.StructField('review_scores_accuracy', types.DoubleType(), False),
-        types.StructField('review_scores_cleanliness', types.DoubleType(), False),
-        types.StructField('review_scores_checkin', types.DoubleType(), False),
-        types.StructField('review_scores_communication', types.DoubleType(), False),
-        types.StructField('review_scores_location', types.DoubleType(), False),
-        types.StructField('review_scores_value', types.DoubleType(), False),
-        types.StructField('reviews_per_month', types.DoubleType(), False),
-        types.StructField('country', types.StringType()),
-        types.StructField('city', types.StringType()),
-        types.StructField('bathrooms', types.DoubleType()),
-    ])
+### 3 Run Server
+TODO
+
+
+    
