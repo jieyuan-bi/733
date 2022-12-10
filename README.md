@@ -33,6 +33,18 @@ pip install wordcloud
 ```
 pip install matplotlib
 ```
+* xgboost
+```
+pip install xgboost
+```
+* nltk
+```
+pip install nltk
+```
+* langdetect
+```
+pip install langdetect
+```
 ### 1 Data Cleaning
 #### 1.1. Data Link
 Since the rawData and the data after cleaning are large, so we upload the data in Google Drive. Please download the datasets and put them to the right path.
@@ -81,6 +93,9 @@ command: ${SPARK_HOME}/bin/spark-submit price_numberOfbedRoom.py inputData ../an
 
 #### 8)predict_price.py:  Generate the Toronto region price predition training model (inputData is cmput732proj/dataProcess/data)
 command: ${SPARK_HOME}/bin/spark-submit predict_price.py inputData ../analysis_results
+
+#### 9)review_analytics.py:  Analyze review scores and comments (inputData is cmput732proj/dataProcess/data)
+command: ${SPARK_HOME}/bin/spark-submit review_analytics.py inputData ../analysis_results
 
 ### 3 Run Server
 TODO
