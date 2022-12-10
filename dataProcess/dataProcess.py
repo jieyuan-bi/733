@@ -123,7 +123,9 @@ def main(inputs, output):
                 {'license': '',  'beds': 0, 'bedrooms': 0,
                  'bathrooms_text': '', 'name': ''})
             # columns we need
-            columns = ['id', 'listing_url', 'neighbourhood_cleansed', 'latitude', 'longitude', 'room_type',
+            columns = ['id', 'listing_url',  'host_since', 'host_response_time', 'host_acceptance_rate',
+                       'host_is_superhost', 'host_listings_count', 'host_identity_verified',
+                       'neighbourhood_cleansed', 'latitude', 'longitude', 'room_type',
                        'accommodates', 'bathrooms_text', 'bedrooms', 'beds', 'price', 'license',
                        'number_of_reviews', 'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness',
                        'review_scores_checkin', 'review_scores_communication', 'review_scores_location',
