@@ -6,7 +6,7 @@ RUN backend(Django): (we assumed python3 is installed, if not, install python an
 cd backend
 
 2. create a virtual environment:
-virtualenv env
+virtualenv --python=python3 env
 (if there isn't a virtualenv command please use "apt-get install python3-virtualenv" command to install)
 
 3. activate the virtual environment:
