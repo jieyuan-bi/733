@@ -22,7 +22,7 @@
           resolution: 'provinces',
           region: 'CA',
           displayMode: 'markers',
-          magnifyingGlass:{enable: true, zoomFactor: 70},
+          magnifyingGlass:{enable: true, zoomFactor: 20},
         },
         chartSettings: {
           packages: ['geochart'],

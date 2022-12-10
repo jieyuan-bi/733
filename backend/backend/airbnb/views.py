@@ -5,8 +5,9 @@ from .models import *
 from .serializers import *
 
 import json
-from .utils import *
+from pyspark.ml import PipelineModel
 
+from .utils import *
 
 # api views of kevin data
 @api_view(['GET'])
@@ -261,3 +262,40 @@ def sub_category_predict_review_list(request):
         return Response(serializer.data)
 
 
+@api_view(['POST'])
+def predict_price(request):
+    """
+    Advanced feature by Kevin
+    Use trained model to predict the price with the following input
+    'accommodates','bedrooms','beds','license','bathrooms'
+    the following two arguments are ignored due to some technical issues
+    'room_type','neighbourhood_cleansed'
+    """
+    if request.method == 'POST':
+        predict_data = request.data
+        print('req data---------------------------',request.data)
+        try:
+            result = price_predict(predict_data)
+            return_data = {'data': result}
+            return_data['success']=1
+        except Exception as e:
+            return_data = {'success': 0}
+            return_data = {'error': str(e)}
+        return Response(return_data)
+
+@api_view(['POST'])
+def recommendation(request):
+    """
+    Advanced feature by Tony
+    """
+    if request.method == 'POST':
+        predict_data = request.data
+        try:
+            result = house_recommend(int(predict_data['id']), int(predict_data['nums']))
+            print('------------------------------',result)
+            return_data = {'data': result}
+            return_data['success']=1
+        except Exception as e:
+            return_data = {'success': 0}
+            return_data = {'error': str(e)}
+        return Response(return_data)
