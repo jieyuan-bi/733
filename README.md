@@ -1,4 +1,4 @@
-# This README.md is an instruction about data loading, processing and analysis. If you want to start the server to display and run our entire project, please follow the instructions in RUNNING.txt
+# This README.md is an instruction about data loading, processing and analysis. If you want to start the server to run and display our entire project, please follow the instructions in RUNNING.txt
 ### 0 Getting Started
 #### Installation:
 * pyspark
