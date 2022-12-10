@@ -9,7 +9,7 @@ cd backend
 
 2. create a virtual environment:
 virtualenv --python=python3 env
-(if there isn't a virtualenv command please use "apt-get install python3-virtualenv" command to install)
+(if there isn't a virtualenv command please install the virtual environment first)
 
 3. activate the virtual environment:
 . env/bin/activate
