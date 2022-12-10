@@ -57,7 +57,7 @@
 <el-card class="box-card">
   <template #header>
     <div class="card-header">
-      <h2>most frequent words used in positive</h2>
+      <h2>most frequent words used in positive reviews</h2>
     </div>
   </template>
   <img alt="image load failed" src="../img/pos.png"/>
@@ -66,7 +66,7 @@
 <el-card class="box-card">
   <template #header>
     <div class="card-header">
-      <h2>most frequent words used in negative</h2>
+      <h2>most frequent words used in negative reviews</h2>
     </div>
   </template>
   <img alt="image load failed" src="../img/neg.png"/>
