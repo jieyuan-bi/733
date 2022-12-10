@@ -13,7 +13,7 @@ virtualenv --python=python3 env
 . env/bin/activate
 
 4. install the libraries
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 5. cd into the backend dir from the current(/backend) dir
 cd backend
