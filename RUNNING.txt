@@ -21,7 +21,7 @@ cd backend
 6. make migrations for database and run the backend
 python manage.py makemigrations
 python manage.py migrate
-python manage.py runsever
+python manage.py runserver
 
 now you can view the backend with the correspond path and port
 
