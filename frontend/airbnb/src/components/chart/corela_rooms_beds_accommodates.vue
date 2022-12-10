@@ -1,6 +1,6 @@
 <template>
   <GChart
-    type="BarChart"
+    type="Table"
     :data="chartData"
     :options="chartOptions"
   />
@@ -17,15 +17,9 @@ export default {
     return {
       chartData:[],
       chartOptions: {
-        
-          // title: 'Correlation between bedrooms_num, beds_num and accommodates',
-          hAxis: {
-            title: 'Correlation',
-            minValue: 0,
-          },
+        curveType: 'function',
           height: 400,
-          colors: ['#43D7FF']
-        
+          width:800,
       }
     };
   },
@@ -38,11 +32,10 @@ export default {
         .get("/api/corela_rooms_beds_accommodates")
         .then((response) => {
           var response_data = response.data;
-          var graph_data = [['','correlation'],
-            ['bedrooms and beds',response_data[0].beds],
-            ['bedrooms and accommodates',response_data[0].accommodates],
-            ['beds and accommodates',response_data[1].accommodates],
-          ]
+          var graph_data = [['bedrooms','beds','accommodates']]
+          for (let i = 0; i < response_data.length; i++) {
+            graph_data.push([response.data[i].bedrooms, response.data[i].beds, response.data[i].accommodates])
+          }
           this.chartData = graph_data
         })
         .catch((error) => {

@@ -38,21 +38,39 @@
 <el-card class="box-card">
   <template #header>
     <div class="card-header">
-      <h2>Other factors that mostly stongly predict overall review score</h2>
-    </div>
-  </template>
-  <factors_predict_review/>
-</el-card>
-
-<el-card class="box-card">
-  <template #header>
-    <div class="card-header">
-      <h2>sub-category review scores that mostly strongly predict overall review score</h2>
+      <h2>sub-category review scores most significant in predicting overall review scores</h2>
     </div>
   </template>
   <sub_category_predict_review/>
 </el-card>
 
+<el-card class="box-card">
+  <template #header>
+    <div class="card-header">
+      <h2>other factors that are most significant in predicting overall review scores</h2>
+    </div>
+  </template>
+  <factors_predict_review/>
+</el-card>
+
+
+<el-card class="box-card">
+  <template #header>
+    <div class="card-header">
+      <h2>most frequent words used in positive</h2>
+    </div>
+  </template>
+  <img alt="image load failed" src="../img/pos.png"/>
+</el-card>
+
+<el-card class="box-card">
+  <template #header>
+    <div class="card-header">
+      <h2>most frequent words used in negative</h2>
+    </div>
+  </template>
+  <img alt="image load failed" src="../img/neg.png"/>
+</el-card>
 
 </template>
 

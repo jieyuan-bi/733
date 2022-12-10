@@ -67,7 +67,7 @@
       },
       methods: {
         onSubmit(){
-          this.result = 'Please wait, the prediction will cost some time...'
+          this.errors= []
           // validate the data
           if (!(this.form.accommodates && this.form.bedrooms && this.form.beds && this.form.license && this.form.bathrooms)){
             this.errors.push("please make sure to fill in all fields");
@@ -78,6 +78,7 @@
             this.errors.push("please only enter 1 or 0 for the license field");
           }
           if (!this.errors.length) {
+          this.result = 'Please wait, the prediction will cost some time...'
             var data = {
               accommodates: this.form.accommodates,
               bedrooms: this.form.bedrooms,
@@ -94,7 +95,7 @@
                   console.log("response:" + response.data.data);
                   this.result = 'The predicted price is: '+response.data.data
                 }else{
-                  this.errors.push("oh no no no no",response.data.e);
+                  this.errors.push("error:",response.data.e);
                 }
               })
               .catch((error) => {
@@ -124,6 +125,12 @@
     }
     a {
       color: #42b983;
+    }
+    p{
+      text-align: left;
+    }
+    h2{
+      text-align: left;
     }
     </style>
     

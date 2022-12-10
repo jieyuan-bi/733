@@ -53,8 +53,8 @@
       },
       methods: {
         onSubmit(){
-          this.result = 'Please wait, the recommendation will cost some time...'
           // validate the data
+          this.errors= []
           if (!(this.form.house_id && this.form.nums)){
             this.errors.push("please make sure to fill in all fields");
           }
@@ -64,6 +64,7 @@
             this.errors.push("we suggest to have a recommend number from 1 - 10");
           }
           if (!this.errors.length) {
+          this.result = 'Please wait, the recommendation will cost some time...'
             var data = {
               id: this.form.house_id,
               nums: this.form.nums,
@@ -114,6 +115,9 @@
       color: #42b983;
     }
     p{
+      text-align: left;
+    }
+    h2{
       text-align: left;
     }
     </style>
