@@ -47,7 +47,7 @@
 <el-card class="box-card">
   <template #header>
     <div class="card-header">
-      <h2>The average house price for each neighborhood in Vancouver and its average latitude and longitude</h2>
+      <h2>The average house price for each neighborhood in Canada and its average latitude and longitude</h2>
     </div>
   </template>
   <div><priceWithSpace class="price-space"/></div>
