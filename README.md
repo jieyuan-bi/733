@@ -1,4 +1,4 @@
-# cmput732proj
+# This README.md is an instruction about data loading, processing and analysis. If you want to start the server to display and run our entire project, please follow the instructions in RUNNING.txt
 ### 0 Getting Started
 #### Installation:
 * pyspark
@@ -97,7 +97,5 @@ command: ${SPARK_HOME}/bin/spark-submit predict_price.py inputData ../analysis_r
 #### 9)review_analytics.py:  Analyze review scores and comments (inputData is cmput732proj/dataProcess/data)
 command: ${SPARK_HOME}/bin/spark-submit review_analytics.py inputData ../analysis_results
 
-### 3 Run Server
-The instructions about how to start server and frontend have been shown in RUNNING.txt.
 
     
