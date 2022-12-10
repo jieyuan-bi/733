@@ -9,7 +9,7 @@ import router from './router'
 
 // import "@/plugins/echarts";
 
-axios.defaults.timeout = 60000
+axios.defaults.timeout = 300000
 axios.defaults.baseURL = 'http://localhost:8000'
 
 const app = createApp(App)
