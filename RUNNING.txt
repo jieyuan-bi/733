@@ -38,6 +38,13 @@ cd frontend/airbnb
 2. install the dependencies
 npm install
 
+  if the error "node: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.28' not found (required by node)" occurred after running the command "npm install", it means     your nodejs version is too low, you should follow the command lines below :
+  2.1 remove the previous version of nodejs:  sudo apt-get remove nodejs
+  2.2 use nvm(Node Version Manager) to update the version of node and npm:   nvm install 16.15.1
+  2.3 try to install the dependencies again:  npm install
+  
+  Also, make sure nvm is installed in your machine, if not, follow the link(https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/) to install it.
+
 3. run the frontend
 npm run serve
 
