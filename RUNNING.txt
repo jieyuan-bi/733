@@ -2,6 +2,8 @@ Our project is separate into two parts, backend is to process the data for analy
 
 ----------------------------------------------------------------------------------------------------------------------
 RUN backend(Django): (we assumed python3 is installed, if not, install python and pip before starting)
+0. make sure your pip is not the old version.
+
 1. cd into the backend dir from the root dir
 cd backend
 
