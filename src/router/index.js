@@ -1,9 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import theHome from '../views/Home.vue'
-import ReviewAnalysis from '../views/ReviewAnalysis.vue'
+import theBeauty from '../views/Beauty.vue'
+
 import Recommend from '../views/Recommend.vue'
 import SentimentAnalysis from '../views/Sentiment.vue'
 import ReviewSummarization from '../views/Summarization.vue'
+import PCadv from '../views/PCadv.vue'
+import KNNgraph from '../views/KNNgraph.vue'
+import SentimentCls from '../views/SentimentCls.vue'
+
 
 const routes = [
   {
@@ -12,9 +17,24 @@ const routes = [
     component: theHome,
   },
   {
-    path: '/review_analysis',
-    name: 'ReviewAnalysis',
-    component: ReviewAnalysis,
+    path: '/beauty',
+    name: 'Beauty',
+    component: theBeauty,
+  },
+  {
+    path: '/pcadv',
+    name: 'PCadv',
+    component: PCadv,
+  },
+  {
+    path: '/sentimentcls',
+    name: 'SentimentCls',
+    component: SentimentCls,
+  },
+  {
+    path: '/knngraph',
+    name: 'KNNgraph',
+    component: KNNgraph,
   },
   {
     path: '/recommend',

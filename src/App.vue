@@ -11,17 +11,22 @@
         @select="handleSelect"
       >
       <p style="padding:0px 10px;color:aliceblue;">Amazon Seller CRM</p>
-        <el-menu-item index="1">
-          <router-link to='/'>General Analysis</router-link>
-        </el-menu-item>
-        <el-menu-item index="2">
-          <router-link to='/review_analysis'>Advanced Analysis</router-link>
-        </el-menu-item>
+        <el-sub-menu index="1">
+          <template #title>General Analysis</template>
+          <el-menu-item index="1-1"><router-link to='/' style="color: aliceblue;">PC Product</router-link></el-menu-item>
+          <el-menu-item index="1-2"><router-link to='/beauty' style="color: aliceblue;">Beauty Product</router-link></el-menu-item>
+        </el-sub-menu>
+        <el-sub-menu index="2">
+          <template #title>General Analysis</template>
+          <el-menu-item index="2-1"><router-link to='/pcadv' style="color: aliceblue;">PC Text Visualization</router-link></el-menu-item>
+          <el-menu-item index="2-2"><router-link to='/knngraph' style="color: aliceblue;">KNN Graph</router-link></el-menu-item>
+          <el-menu-item index="2-2"><router-link to='/sentimentcls' style="color: aliceblue;">Sentiment Classification</router-link></el-menu-item>
+        </el-sub-menu>
         <el-sub-menu index="3">
           <template #title>More Features</template>
-          <el-menu-item index="2-1"><router-link to='/recommend' style="color: aliceblue;">Product Comparison</router-link></el-menu-item>
-          <el-menu-item index="2-2"><router-link to='/sentiment' style="color: aliceblue;">Sentiment Analysis</router-link></el-menu-item>
-          <el-menu-item index="2-3"><router-link to='/summarization' style="color: aliceblue;">Review Summarization</router-link></el-menu-item>
+          <el-menu-item index="3-1"><router-link to='/recommend' style="color: aliceblue;">Product Comparison</router-link></el-menu-item>
+          <el-menu-item index="3-2"><router-link to='/sentiment' style="color: aliceblue;">Sentiment Analysis</router-link></el-menu-item>
+          <el-menu-item index="3-3"><router-link to='/summarization' style="color: aliceblue;">Review Summarization</router-link></el-menu-item>
         </el-sub-menu>
       </el-menu>
     </el-affix>
@@ -38,7 +43,7 @@ export default {
   name: 'App',
   data() {
     return {
-      activeIndex : ref('1'),
+      activeIndex : ref('1-1'),
 
     };
   },
