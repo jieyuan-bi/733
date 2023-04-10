@@ -1,4 +1,12 @@
 <template>
+  <el-button text @click="centerDialogVisible = true" style="margin-top: 20px;">
+      Dataset Preview
+    </el-button>
+
+    <el-dialog v-model="centerDialogVisible" title="Preview" width="40%" center>
+      <img alt="image load failed" src="../img/preview_sentcls.png" style="width:80%"/>
+    </el-dialog>
+
 
   <el-card class="box-card">
     <template #header>
@@ -24,28 +32,6 @@
     </el-card>
 
 
-    <el-card class="box-card">
-    <template #header>
-      <div class="card-header">
-        <h2>Word Frequency</h2>
-      </div>
-    </template>
-
-    <img alt="image load failed" src="../img/tony4.png" style="width:80%"/>
-
-      <div>
-      <el-popover
-        placement="bottom"
-        :width="600"
-        trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
-      >
-        <template #reference>
-          <el-button class="m-2">Graph description</el-button>
-        </template>
-      </el-popover>
-      </div>
-    </el-card>
 
 </template>
 
@@ -55,6 +41,12 @@
 
 export default {
   name: 'SentimentCls',
+  data() {
+    return {
+      centerDialogVisible: false,
+
+    };
+  },
   props: {
     msg: String
   },

@@ -7,14 +7,14 @@
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Provide products that are similar to the chosen one for seller to compare them</h2>
+        <h2>Provide products for Comparision given the seller id</h2>
       </div>
     </template>
     <div class="alert alert-danger" role="alert" v-if="errors.length">
       <p v-for="error in errors" :key="error" style="color:red;">{{error}}</p>
     </div>
    <el-form :model="form" label-width="15%">
-    <el-form-item label="User id">
+    <el-form-item label="Seller id">
       <el-input v-model="form.user_id" placeholder="A39HTATAQ9V7YF" disabled/>
     </el-form-item>
 
@@ -30,7 +30,9 @@
    <div style="text-align: left;">
    <div style="font-size:30px">result</div>
     <div v-if="show">
-      The top 5 recommended products are: B00004TUBL, B004LJ0ZK6, B004HFBC9W, B004HSO124, B004INQ65S (products are provided in ASIN)
+      The top 5 recommended products are: B00004TUBL, B004LJ0ZK6, B004HFBC9W, B004HSO124, B004INQ65S (products are provided in ASIN)<br/><br/><br/>
+      You can look up ASIN with this link<a href="https://amazon-asin.com/">https://amazon-asin.com/</a><br/>
+      The dataset is from 2003, some products are already removed
     </div>
   </div>
   </el-card>

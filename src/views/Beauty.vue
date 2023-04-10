@@ -1,9 +1,16 @@
 <template>
+  <el-button text @click="centerDialogVisible = true" style="margin-top: 20px;">
+      Dataset Preview
+    </el-button>
+
+    <el-dialog v-model="centerDialogVisible" title="Preview" width="40%" center>
+      <img alt="image load failed" src="../img/preview_beauty.png" style="width:80%"/>
+    </el-dialog>
 
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Title</h2>
+        <h2>Beauty Product Rating Count</h2>
       </div>
     </template>
 
@@ -14,7 +21,7 @@
         placement="bottom"
         :width="600"
         trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+        content="the majority of ratings are 5-star ratings, followed by 4-star ratings . The remaining ratings are fairly evenly distributed, with 3-star ratings being slightly more common than 1-star or 2-star ratings"
       >
         <template #reference>
           <el-button class="m-2">Graph description</el-button>
@@ -27,7 +34,7 @@
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Title</h2>
+        <h2>Top 5 most popular beauty product</h2>
       </div>
     </template>
 
@@ -38,7 +45,7 @@
         placement="bottom"
         :width="600"
         trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+        content="The top 5 most popular beauty product, product is given in ASIN"
       >
         <template #reference>
           <el-button class="m-2">Graph description</el-button>
@@ -55,6 +62,12 @@
 
 export default {
   name: 'theBeauty',
+  data() {
+    return {
+      centerDialogVisible: false,
+
+    };
+  },
   props: {
     msg: String
   },

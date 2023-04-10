@@ -1,5 +1,13 @@
 <template>
 
+    <el-button text @click="centerDialogVisible = true" style="margin-top: 20px;">
+      Dataset Preview
+    </el-button>
+
+    <el-dialog v-model="centerDialogVisible" title="Preview" width="70%" center>
+      <img alt="image load failed" src="../img/preview_yixian.png" style="width:100%"/>
+    </el-dialog>
+
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
@@ -32,6 +40,12 @@
 
 export default {
   name: 'KNNgraph',
+  data() {
+    return {
+      centerDialogVisible: false,
+
+    };
+  },
   props: {
     msg: String
   },

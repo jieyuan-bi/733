@@ -1,9 +1,16 @@
 <template>
+  <el-button text @click="centerDialogVisible = true" style="margin-top: 20px;">
+      Dataset Preview
+    </el-button>
+
+    <el-dialog v-model="centerDialogVisible" title="Preview" width="70%" center>
+      <img alt="image load failed" src="../img/preview_pc.jpg" style="width:100%"/>
+    </el-dialog>
 
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Title</h2>
+        <h2>Distribution of Polarity Score</h2>
       </div>
     </template>
 
@@ -27,7 +34,7 @@
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Title</h2>
+        <h2>Polarity Score Distribution by Ratings</h2>
       </div>
     </template>
 
@@ -51,7 +58,7 @@
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Title</h2>
+        <h2>Top 20 most frequent unigrams in reviews</h2>
       </div>
     </template>
 
@@ -75,7 +82,7 @@
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Title</h2>
+        <h2>Top 20 most frequent bigrams in reviews</h2>
       </div>
     </template>
 
@@ -95,11 +102,11 @@
       </div>
     </el-card>
 
-    
+
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Title</h2>
+        <h2>Top 20 most frequent trigrams in reviews</h2>
       </div>
     </template>
 
@@ -126,6 +133,12 @@
 
 export default {
   name: 'PCadv',
+  data() {
+    return {
+      centerDialogVisible: false,
+
+    };
+  },
   props: {
     msg: String
   },

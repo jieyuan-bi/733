@@ -1,5 +1,14 @@
 <template>
 
+  <el-button text @click="centerDialogVisible = true" style="margin-top: 20px;">
+      Dataset Preview
+    </el-button>
+
+    <el-dialog v-model="centerDialogVisible" title="Preview" width="70%" center>
+      <img alt="image load failed" src="../img/preview_pc.jpg" style="width:100%"/>
+    </el-dialog>
+
+
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
@@ -99,15 +108,6 @@
 </template>
 
 <script>
-// import corela_rooms_beds_accommodates from '../components/chart/corela_rooms_beds_accommodates';
-// import price_numberOfBedRoom from '../components/chart/price_numberOfBedRoom';
-// import avg_price_license from '../components/chart/avg_price_license';
-// import priceWithMonth from '../components/chart/priceWithMonth';
-// import priceWithWeek from '../components/chart/priceWithWeek';
-// import priceWithSpace from '../components/chart/priceWithSpace';
-// import priceWithType from '../components/chart/priceWithType';
-
-
 
 
 export default {
@@ -116,14 +116,13 @@ export default {
     msg: String
   },
   components: {
-    // corela_rooms_beds_accommodates,
-    // price_numberOfBedRoom,
-    // avg_price_license,
-    // priceWithMonth,
-    // priceWithWeek,
-    // priceWithSpace,
-    // priceWithType,
 
+  },
+  data() {
+    return {
+      centerDialogVisible: false,
+
+    };
   },
 }
 </script>
