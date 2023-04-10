@@ -3,5 +3,5 @@ module.exports = defineConfig({
   transpileDependencies: true
 })
 module.exports = {
-  publicPath: '/amazonreview/'
+  publicPath: '/cmput732proj/'
 }
