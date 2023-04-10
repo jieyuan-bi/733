@@ -1,20 +1,25 @@
 <template>
+  <el-alert title="This function is just a Demo, for full function goto following link" type="warning" show-icon />
+  <div style="text-align:left">
+    <a href="https://github.com/KevinXu17/733PJ/blob/main/Amazon_Product_RS.ipynb">https://github.com/KevinXu17/733PJ/blob/main/Amazon_Product_RS.ipynb</a>
+  </div>
+  
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Recommend a house similar to your choice in Vancouver Area</h2>
+        <h2>Provide products that are similar to the chosen one for seller to compare them</h2>
       </div>
     </template>
     <div class="alert alert-danger" role="alert" v-if="errors.length">
       <p v-for="error in errors" :key="error" style="color:red;">{{error}}</p>
     </div>
    <el-form :model="form" label-width="15%">
-    <el-form-item label="Similar house you are looking for">
-      <el-input v-model="form.house_id" placeholder="please enter the id(eg.13490)"/>
+    <el-form-item label="User id">
+      <el-input v-model="form.user_id" placeholder="A39HTATAQ9V7YF" disabled/>
     </el-form-item>
 
-    <el-form-item label="Number of recommendation">
-      <el-input v-model="form.nums" placeholder="we suggest to have a recommend number from 1 - 10"/>
+    <el-form-item label="Numbers of Comparision">
+      <el-input v-model="form.nums" placeholder="5" disabled/>
     </el-form-item>
 
     <el-form-item>
@@ -22,18 +27,18 @@
     </el-form-item>
 
    </el-form>
-   <h2>result</h2>
-   <p><span v-html="result">
-
-   </span></p>
-
+   <div style="text-align: left;">
+   <div style="font-size:30px">result</div>
+    <div v-if="show">
+      The top 5 recommended products are: B00004TUBL, B004LJ0ZK6, B004HFBC9W, B004HSO124, B004INQ65S (products are provided in ASIN)
+    </div>
+  </div>
   </el-card>
     
     </template>
     
     <script>
     import { reactive } from 'vue'
-    import axios from "axios";
     
     export default {
       name: 'theRecommend',
@@ -42,8 +47,9 @@
       },
       data() {
         return {
+          show: false,
           form : reactive({
-            house_id: '',
+            user_id: '',
             nums: '',
           }),
           errors: [],
@@ -53,42 +59,7 @@
       },
       methods: {
         onSubmit(){
-          // validate the data
-          this.errors= []
-          if (!(this.form.house_id && this.form.nums)){
-            this.errors.push("please make sure to fill in all fields");
-          }
-          if (isNaN(this.form.house_id) || isNaN(this.form.nums)) {
-            this.errors.push("please enter a number for the fields");
-          }if (parseInt(this.form.nums)>11 || parseInt(this.form.nums)<1) {
-            this.errors.push("we suggest to have a recommend number from 1 - 10");
-          }
-          if (!this.errors.length) {
-          this.result = 'Please wait, the recommendation will cost some time...'
-            var data = {
-              id: this.form.house_id,
-              nums: this.form.nums,
-            }
-            console.log(data)
-            axios
-              .post("/api/recommendation/", data)
-              .then((response) => {
-                console.log("response error:" + response.data.error);
-                if (response.data.success) {
-                  this.result = ''
-                  for (let i=0;i<response.data.data.length; i++){
-                    console.log("response:" + response.data.data[i].recommend);
-                    this.result = this.result + '<br>--------------------------------------------------------------------<br>Recommended: ' + response.data.data[i].recommend + '<br>Score: ' + response.data.data[i].score;
-                  }
-                  
-                }else{
-                  this.errors.push("error:",response.data.e);
-                }
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          }
+          this.show = true
         }
       },
     }
@@ -113,6 +84,8 @@
     }
     a {
       color: #42b983;
+      text-align: left;
+      width:100%;
     }
     p{
       text-align: left;

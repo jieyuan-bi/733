@@ -10,16 +10,18 @@
         active-text-color="#ffd04b"
         @select="handleSelect"
       >
+      <p style="padding:0px 10px;color:aliceblue;">Amazon Seller CRM</p>
         <el-menu-item index="1">
-          <router-link to='/'>Housing Analysis</router-link>
+          <router-link to='/'>General Analysis</router-link>
         </el-menu-item>
         <el-menu-item index="2">
-          <router-link to='/review_analysis'>Reviews Analysis</router-link>
+          <router-link to='/review_analysis'>Advanced Analysis</router-link>
         </el-menu-item>
         <el-sub-menu index="3">
-          <template #title>Advanced Features</template>
-          <el-menu-item index="2-1"><router-link to='/predict_price' style="color: aliceblue;">Predict Price</router-link></el-menu-item>
-          <el-menu-item index="2-2"><router-link to='/recommend' style="color: aliceblue;">House Recommendation</router-link></el-menu-item>
+          <template #title>More Features</template>
+          <el-menu-item index="2-1"><router-link to='/recommend' style="color: aliceblue;">Product Comparison</router-link></el-menu-item>
+          <el-menu-item index="2-2"><router-link to='/sentiment' style="color: aliceblue;">Sentiment Analysis</router-link></el-menu-item>
+          <el-menu-item index="2-3"><router-link to='/summarization' style="color: aliceblue;">Review Summarization</router-link></el-menu-item>
         </el-sub-menu>
       </el-menu>
     </el-affix>

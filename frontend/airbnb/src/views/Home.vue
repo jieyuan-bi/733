@@ -1,78 +1,108 @@
 <template>
+
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Correlation between bedrooms_num, beds_num and accommodates</h2>
+        <h2>Number of reviews evolved over years</h2>
       </div>
-    </template>
-    <corela_rooms_beds_accommodates/>
-  </el-card>
+      <img alt="image load failed" src="../img/kelvin1.png" style="width:100%"/>
 
-  <el-card class="box-card">
+      <div>
+      <el-popover
+        placement="bottom"
+        :width="600"
+        trigger="click"
+        content="The number of reviews have evolved over years jump exponentially"
+      >
+        <template #reference>
+          <el-button class="m-2">Graph description</el-button>
+        </template>
+      </el-popover>
+      </div>
+
+      </template>
+    </el-card>
+
+    <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Price Distribution by BedRooms_number</h2>
+        <h2>Star Rating Distribution</h2>
       </div>
-    </template>
-    <price_numberOfBedRoom/>
-  </el-card>
+      <img alt="image load failed" src="../img/kelvin2.png" style="width:100%"/>
 
-  <el-card class="box-card">
+      <div>
+      <el-popover
+        placement="bottom"
+        :width="600"
+        trigger="click"
+        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+      >
+        <template #reference>
+          <el-button class="m-2">Graph description</el-button>
+        </template>
+      </el-popover>
+      </div>
+
+      </template>
+    </el-card>
+
+    <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Average Price by having License(1) or not(0)</h2>
+        <h2>Vote Ratio Distribution by Star Rating</h2>
       </div>
-    </template>
-    <avg_price_license/>
-  </el-card>
+      <img alt="image load failed" src="../img/kelvin3.png" style="width:100%"/>
 
-  <el-card class="box-card">
+      <div>
+      <el-popover
+        placement="bottom"
+        :width="600"
+        trigger="click"
+        content="vote_ratio distribution by star rating. More than half of reviews with 5 star rating or 4 star rating have 90% helpfulness vote ratio."
+      >
+        <template #reference>
+          <el-button class="m-2">Graph description</el-button>
+        </template>
+      </el-popover>
+      </div>
+
+      </template>
+    </el-card>
+
+    <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Changes in the mean and median house prices in the Vancouver area by month</h2>
+        <h2>Vote Ratio Distribution by Sentence_count</h2>
       </div>
-    </template>
-    <priceWithMonth/>
-  </el-card>
+      <img alt="image load failed" src="../img/kelvin4.png" style="width:100%"/>
 
-<el-card class="box-card">
-  <template #header>
-    <div class="card-header">
-      <h2>Changes in the mean and median house prices in the Vancouver area by week</h2>
-    </div>
-  </template>
-  <priceWithWeek/>
-</el-card>
+      <div>
+      <el-popover
+        placement="bottom"
+        :width="600"
+        trigger="click"
+        content="vote_ratio distribution by sentence_count. Most of the reviews which has more than 20 sentences have 80% helpfulness vote ratio"
+      >
+        <template #reference>
+          <el-button class="m-2">Graph description</el-button>
+        </template>
+      </el-popover>
+      </div>
 
-<el-card class="box-card">
-  <template #header>
-    <div class="card-header">
-      <h2>The average house price for each neighborhood in Canada and its average latitude and longitude</h2>
-    </div>
-  </template>
-  <div><priceWithSpace class="price-space"/></div>
-</el-card>
-
-<el-card class="box-card">
-  <template #header>
-    <div class="card-header">
-      <h2>Average, median, highest, and lowest prices for four types of homes in the Vancouver area</h2>
-    </div>
-  </template>
-  <priceWithType/>
-</el-card>
+      </template>
+    </el-card>
 
 
 </template>
 
 <script>
-import corela_rooms_beds_accommodates from '../components/chart/corela_rooms_beds_accommodates';
-import price_numberOfBedRoom from '../components/chart/price_numberOfBedRoom';
-import avg_price_license from '../components/chart/avg_price_license';
-import priceWithMonth from '../components/chart/priceWithMonth';
-import priceWithWeek from '../components/chart/priceWithWeek';
-import priceWithSpace from '../components/chart/priceWithSpace';
-import priceWithType from '../components/chart/priceWithType';
+// import corela_rooms_beds_accommodates from '../components/chart/corela_rooms_beds_accommodates';
+// import price_numberOfBedRoom from '../components/chart/price_numberOfBedRoom';
+// import avg_price_license from '../components/chart/avg_price_license';
+// import priceWithMonth from '../components/chart/priceWithMonth';
+// import priceWithWeek from '../components/chart/priceWithWeek';
+// import priceWithSpace from '../components/chart/priceWithSpace';
+// import priceWithType from '../components/chart/priceWithType';
 
 
 
@@ -83,13 +113,13 @@ export default {
     msg: String
   },
   components: {
-    corela_rooms_beds_accommodates,
-    price_numberOfBedRoom,
-    avg_price_license,
-    priceWithMonth,
-    priceWithWeek,
-    priceWithSpace,
-    priceWithType,
+    // corela_rooms_beds_accommodates,
+    // price_numberOfBedRoom,
+    // avg_price_license,
+    // priceWithMonth,
+    // priceWithWeek,
+    // priceWithSpace,
+    // priceWithType,
 
   },
 }
@@ -98,7 +128,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .box-card{
-  margin:5%
+  margin:5% 10%
 }
 h3 {
   margin: 40px 0 0;

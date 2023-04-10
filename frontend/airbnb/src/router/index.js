@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import theHome from '../views/Home.vue'
 import ReviewAnalysis from '../views/ReviewAnalysis.vue'
 import Recommend from '../views/Recommend.vue'
-import PredictPrice from '../views/PredictPrice.vue'
+import SentimentAnalysis from '../views/Sentiment.vue'
+import ReviewSummarization from '../views/Summarization.vue'
 
 const routes = [
   {
@@ -21,9 +22,14 @@ const routes = [
     component: Recommend,
   },
   {
-    path: '/predict_price',
-    name: 'PredictPrice',
-    component: PredictPrice,
+    path: '/sentiment',
+    name: 'Sentiment',
+    component: SentimentAnalysis,
+  },
+  {
+    path: '/summarization',
+    name: 'Summarization',
+    component: ReviewSummarization,
   },
 ]
 
