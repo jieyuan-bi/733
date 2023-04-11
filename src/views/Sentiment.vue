@@ -1,7 +1,7 @@
 <template>
   <el-alert title="This function is just a Demo, for full function goto following link" type="warning" show-icon />
   <div style="text-align:left">
-    <a href="https://github.com/KevinXu17/733PJ/blob/main/Sentiment_Classification%2BReview_Summarization.ipynb">https://github.com/KevinXu17/733PJ/blob/main/Sentiment_Classification%2BReview_Summarization.ipynb</a>
+    <a href="https://github.com/KevinXu17/733PJ/blob/main/sentiment%2Bsummarization.ipynb">https://github.com/KevinXu17/733PJ/blob/main/sentiment%2Bsummarization.ipynb</a>
   </div>
   
   <el-card class="box-card">

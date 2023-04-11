@@ -21,7 +21,7 @@
         placement="bottom"
         :width="600"
         trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+        content="Polarity scores which range from -1 to 1, quantify sentiments in customer reviews. Polarity score equal to 1 means customers hold positive thoughts. When the polarity score of a review is equivalent to -1, it shows negative emotions. This plot shows the polarity score distribution of more than 30000 reviews on Amazon PC products. The average polarity score in this plot is about 0.145, and the shape of this curve looks like a normal distribution. From this plot, most of the reviews on PC products show neutral emotions. "
       >
         <template #reference>
           <el-button class="m-2">Graph description</el-button>
@@ -45,7 +45,7 @@
         placement="bottom"
         :width="600"
         trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+        content="his plot shows the distribution of polarity scores within different ratings. Customers with a high rating on their purchased products tend to leave more positive reviews. "
       >
         <template #reference>
           <el-button class="m-2">Graph description</el-button>
@@ -69,7 +69,7 @@
         placement="bottom"
         :width="600"
         trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+        content="N-grams mean n consecutive words in a sentence. This plot shows the 20 most common unigrams among 30,000 reviews. Except for verbs, most unigrams relate to PC products, such as “screen,” “keyboard,” and “laptop.” The plot gives the business owner a rough idea about their product review."
       >
         <template #reference>
           <el-button class="m-2">Graph description</el-button>
@@ -93,7 +93,7 @@
         placement="bottom"
         :width="600"
         trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+        content="This plot shows the most common bigrams among 30,000 reviews. The top one is the “hard drive,” which occurs about 7,000 times. From this plot, we have enough reason to believe customers care about the “hard drive” and “battery life” when shopping for PC products."
       >
         <template #reference>
           <el-button class="m-2">Graph description</el-button>
@@ -117,7 +117,7 @@
         placement="bottom"
         :width="600"
         trigger="click"
-        content="Star rating distribution, more than 40% is 5 star rating, and 25% is 1 star rating."
+        content="This plot shows the most common trigrams among 30,000 reviews."
       >
         <template #reference>
           <el-button class="m-2">Graph description</el-button>

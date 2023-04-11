@@ -20,7 +20,8 @@
           <template #title>Advanced Analysis</template>
           <el-menu-item index="2-1"><router-link to='/pcadv' style="color: aliceblue;">PC Text Visualization</router-link></el-menu-item>
           <el-menu-item index="2-2"><router-link to='/knngraph' style="color: aliceblue;">KNN Graph</router-link></el-menu-item>
-          <el-menu-item index="2-2"><router-link to='/sentimentcls' style="color: aliceblue;">Sentiment Classification</router-link></el-menu-item>
+          <el-menu-item index="2-3"><router-link to='/sentimentcls' style="color: aliceblue;">Sentiment Classification</router-link></el-menu-item>
+          <el-menu-item index="2-4"><router-link to='/classification' style="color: aliceblue;">RFT and MLP classification</router-link></el-menu-item>
         </el-sub-menu>
         <el-sub-menu index="3">
           <template #title>More Features</template>

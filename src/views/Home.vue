@@ -5,7 +5,7 @@
     </el-button>
 
     <el-dialog v-model="centerDialogVisible" title="Preview" width="70%" center>
-      <img alt="image load failed" src="../img/preview_pc.jpg" style="width:100%"/>
+      <img alt="image load failed" src="../img/preview_pc1.png" style="width:100%"/>
     </el-dialog>
 
 

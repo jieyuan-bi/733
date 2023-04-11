@@ -8,6 +8,7 @@ import ReviewSummarization from '../views/Summarization.vue'
 import PCadv from '../views/PCadv.vue'
 import KNNgraph from '../views/KNNgraph.vue'
 import SentimentCls from '../views/SentimentCls.vue'
+import theClassification from '../views/Classification.vue'
 
 
 const routes = [
@@ -35,6 +36,11 @@ const routes = [
     path: '/knngraph',
     name: 'KNNgraph',
     component: KNNgraph,
+  },
+  {
+    path: '/classification',
+    name: 'theClassification',
+    component: theClassification,
   },
   {
     path: '/recommend',
