@@ -7,7 +7,7 @@
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>Provide products for Comparision given the seller id</h2>
+        <h2>Provide products for Comparison given the seller id</h2>
       </div>
     </template>
     <div class="alert alert-danger" role="alert" v-if="errors.length">
