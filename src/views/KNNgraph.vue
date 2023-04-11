@@ -11,7 +11,7 @@
     <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <h2>KNN Graph</h2>
+        <h2>K-means Graph</h2>
       </div>
     </template>
 
